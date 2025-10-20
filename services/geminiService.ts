@@ -64,7 +64,9 @@ export async function analyzeResumeAndJobDescription(
 
   const textPart = {
     text: `
-    You are an expert ATS (Applicant Tracking System) analyst and professional resume writer. Your task is to analyze the provided resume PDF against the provided job description text.
+    First, identify the specific job role from the provided job description (e.g., "AI Engineer", "Senior Frontend Engineer").
+
+    Then, adopt the persona of an expert recruiter and hiring manager who specializes in hiring for that EXACT role. Your task is to analyze the provided resume PDF against the job description from the perspective of someone hiring for this specific position. Your feedback must be highly tailored and reflect deep knowledge of what a top candidate for this role looks like.
 
     Follow these steps:
     1. Extract all text content from the resume PDF.
