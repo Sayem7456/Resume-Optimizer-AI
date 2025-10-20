@@ -1,0 +1,5 @@
+{
+  "name": "Resume Optimizer AI",
+  "description": "An AI-powered system that provides personalized resume improvement suggestions based on a target job description, helping you optimize for ATS and catch the recruiter's eye.",
+  "requestFramePermissions": []
+}
