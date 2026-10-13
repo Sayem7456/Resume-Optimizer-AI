@@ -1,20 +1,115 @@
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <img width="1200" height="475" alt="Resume Optimizer AI banner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# Resume Optimizer AI
 
-This contains everything you need to run your app locally.
+Upload your resume and paste a target job description to receive AI-powered suggestions for improving your resume and increasing its match rate.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1shjmjWoCkpVRlA2gFa9fGOHN8W6AXc1v
+## Overview
 
-## Run Locally
+Resume Optimizer AI is a React + Vite application that analyzes a candidate's resume against a target job description using Google's Gemini AI. It highlights:
 
-**Prerequisites:**  Node.js
+- compatibility score
+- missing keywords
+- suggested resume improvements
+- example rewrites and improvement categories
 
+## Features
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- Upload a resume in PDF format
+- Paste or type a target job description
+- AI analysis powered by Gemini 2.5 Flash
+- Get a match score from 0-100
+- See missing keywords and critical skill gaps
+- Receive actionable suggestions with examples
+- Review suggested improvements grouped by impact and type
+
+## Tech Stack
+
+- React 19
+- TypeScript
+- Vite
+- Google GenAI SDK
+
+## Local Setup
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+- A Google Gemini API key
+
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Configure environment variables
+
+Create a `.env.local` file in the project root and add your Gemini API key:
+
+```env
+API_KEY=your_google_gemini_api_key_here
+```
+
+### 3. Run the app locally
+
+```bash
+npm run dev
+```
+
+The app should open at `http://localhost:5173`.
+
+### 4. Build for production
+
+```bash
+npm run build
+```
+
+## How It Works
+
+1. Upload a resume PDF.
+2. Paste the job description you are targeting.
+3. The app sends the resume and description to Gemini.
+4. Gemini extracts resume content and compares it with the job requirements.
+5. The app displays:
+   - compatibility score
+   - skills/keywords missing from the resume
+   - targeted suggestions to improve alignment
+
+## Project Structure
+
+```text
+Resume-Optimizer-AI/
+├── App.tsx
+├── components/
+│   ├── AnalysisDisplay.tsx
+│   ├── ErrorMessage.tsx
+│   ├── FileUpload.tsx
+│   ├── Loader.tsx
+│   └── icons/
+├── constants.ts
+├── index.html
+├── index.tsx
+├── package.json
+├── services/
+│   └── geminiService.ts
+├── types.ts
+├── tsconfig.json
+├── vite.config.ts
+├── .gitignore
+├── .env.local
+└── README.md
+```
+
+## Notes
+
+- Resume uploads are expected to be PDF files.
+- The app is designed for text-based PDF resumes for best results.
+- Gemini output is validated against a structured JSON schema to return clear analysis results.
+
+## License
+
+This project is currently unlicensed unless otherwise specified.
